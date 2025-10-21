@@ -1,0 +1,24 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build artifacts
+fiscal
+fiscal.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
