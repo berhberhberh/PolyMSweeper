@@ -78,7 +78,7 @@ func (mm *MarketMaker) FindIlliquidMarkets() ([]Opportunity, error) {
 		}
 
 		// Parse volume
-		volume, _ := parseFloat(market.Volume24hr)
+		volume := parseVolume(market.Volume24hr)
 
 		// Calculate spread
 		spread := bestAsk - bestBid
@@ -179,7 +179,7 @@ func (mm *MarketMaker) FindActiveMarkets() ([]Opportunity, error) {
 			continue
 		}
 
-		volume, _ := parseFloat(market.Volume24hr)
+		volume := parseVolume(market.Volume24hr)
 
 		spread := bestAsk - bestBid
 		spreadPct := 0.0

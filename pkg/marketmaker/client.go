@@ -92,3 +92,20 @@ func parseFloat(s string) (float64, error) {
 	}
 	return strconv.ParseFloat(s, 64)
 }
+
+// parseVolume handles volume which can be string or number
+func parseVolume(v interface{}) float64 {
+	if v == nil {
+		return 0
+	}
+
+	switch val := v.(type) {
+	case float64:
+		return val
+	case string:
+		f, _ := strconv.ParseFloat(val, 64)
+		return f
+	default:
+		return 0
+	}
+}
